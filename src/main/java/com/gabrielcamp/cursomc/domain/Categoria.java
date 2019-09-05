@@ -7,6 +7,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+// Responsável por declarar as classes e suas responsabilidades (Domain)
+
 @Entity
 public class Categoria implements Serializable{
 	
