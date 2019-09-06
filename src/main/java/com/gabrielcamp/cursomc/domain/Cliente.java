@@ -30,6 +30,9 @@ public class Cliente implements Serializable{
 	private String cpfOuCnpj;
 	private Integer tipo;
 	
+	// JsonManagedReference = Quando quero que seja serializado
+	// JsonBackReference = Quando não quero que seja serializado (não cíclica)
+	
 	@JsonManagedReference
 	@OneToMany(mappedBy="cliente")
 	private List<Endereco> enderecos = new ArrayList<>();
