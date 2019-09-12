@@ -10,6 +10,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.gabrielcamp.cursomc.domain.enums.EstadoPagamento;
 
 // abstract garante  que nunca Pagamento será instanciado, apenas Pagto com Cartao/Boleto
@@ -25,6 +26,7 @@ public abstract class Pagamento implements Serializable{
 	private Integer estado;
 	
 	// MapsId - garante que o id do pagamento e do pedido serão os mesmos
+	@JsonBackReference
 	@OneToOne
 	@JoinColumn(name="pedido_id")
 	@MapsId
