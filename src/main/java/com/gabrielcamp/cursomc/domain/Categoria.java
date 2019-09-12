@@ -10,8 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-
 // Responsável por declarar as classes e suas responsabilidades (Domain)
 
 @Entity
@@ -25,7 +23,6 @@ public class Categoria implements Serializable{
 	private String nome;
 	
 	// Relação NxN Parte Inversa, mapeado já em produto
-	@JsonManagedReference
 	@ManyToMany(mappedBy="categorias")
 	private List<Produto> produtos = new ArrayList<>();
 	
